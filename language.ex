@@ -1,30 +1,28 @@
 cell syntax
 
 function declaration
-    <int: a, char: b> <= func{char: c, char^: d} = (
+
+   |* function parameters go first, then return parameters. ^ declares a pointer. *|    
+
+
+    func{char: c, char^: d} => <int: a, char: b> = (
         |* code body *|
     )
 
+    
+
 cystil syntax
 
-function declaration
+*function declaration
+
     (-| * before variables means non-typed. -)
 
     func * x y = [
+        (-| code body -)
+    ];;
 
-    ]
+    (-| ...or, having typed variables... -)    
 
     func int: x; char: y = [
-
+        (-| code body -)
     ]
-
-
-echo "# data_structs" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/kaism/data_structs.git
-git push -u origin master
-
-git remote add origin https://github.com/kaism/data_structs.git
-git push -u origin master
