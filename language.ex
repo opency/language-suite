@@ -5,7 +5,7 @@ function declaration
    |* function parameters go first, then return parameters. ^ declares a pointer. *|    
 
 
-    func{char: c, char^: d} => <int: a, char: b> = (
+    func{char: c, char^: d} => ||int: a, char: b|| = (
         |* code body *|
     )
 
