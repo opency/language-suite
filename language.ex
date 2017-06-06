@@ -5,7 +5,7 @@ cell - A influnced by: C, BLISS, ML, LISP
 ========
 comments
 ========
-    single line:
+    single line:    ;?
     multiline:      |* comment *|
 =========
 operators
@@ -44,11 +44,27 @@ types
 =========
 data flow
 =========
-    if |(& (< x 2)  (< y 7))| = ::
+    if | (& (< x 2)  (< y 7)) | [then]: [
 
-    :;
+    ]
 
+    |* if modifiers:  .
+                      .     *|
 
+    |* Loops have loop modifiers within []: If blank, then a straight loop until conditions met, same as modifier until *|
+    loop| ... | []: [
+
+    ]
+
+    |* Loop modifiers: inf
+                       power
+                       each
+                       until    *|
+
+    ;? infinite loop:
+    loop [inf]: [
+        ;? stuff....
+    ]
 
 ====================
 function declaration
@@ -65,9 +81,9 @@ Defining a cell
 ===============
     cell: block  = ::
                 int32: i = 0;
-                loop|(< i 100)| = ::
+                loop|(< i 100)| [until]: [
 
-                :;
+                ]
     :;
 
 =============
@@ -84,11 +100,14 @@ comments
 ========
     (-| multi-line comment -)
     --(single line comment)
+=========
+operators
+=========
 
 =========
 data flow
 =========
-    if x < y ->
+    if x < y; ->
         display "~%" ## x;
     else
         display "~%" ## y;;
@@ -97,17 +116,24 @@ data flow
 function declaration
 ====================
     (-| * before variables means non-typed. -)
+    (-| func says it's defining a function. Function name goes at the end -)
 
     func * x y = [
         (-| code body -)
-    ];;
+    ] foo;;
 
     (-| ...or, having typed variables... -)
 
     func int: x; char: y = [
         (-| code body -)
-    ]
+    ] foo;;
 =====
 logic
 =====
-? is x y.
+? is x y.   --(x and y predicates, ? is returns whether it is true or false that x and y are logically equivalent)
+
+//////
+miscs.
+\\\\\\
+
+types: Having a mechanism which defines new types, rather than using objects to define a new type like in C++
