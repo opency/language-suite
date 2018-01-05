@@ -137,3 +137,5 @@ miscs.
 \\\\\\
 
 types: Having a mechanism which defines new types, rather than using objects to define a new type like in C++
+
+eq?($seq, $prev_seq) : /* this */ else: /* that */
